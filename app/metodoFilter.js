@@ -1,26 +1,35 @@
-const buttons = document.querySelectorAll(".btn");
+const buttonsFiltro = document.querySelectorAll(
+  "#btnFiltrarLivrosBack, #btnFiltrarLivrosDados, #btnFiltrarLivrosFront"
+);
+console.log(buttonsFiltro);
 let filtro;
-buttons.forEach((button) => {;
+buttonsFiltro.forEach((button) => {
   button.addEventListener("click", filtrarLivros);
 });
 
 function filtrarLivros() {
-   
   breakme: if (this.value) {
-      if (this.value == filtro) {
-           buttons.forEach((btn) => (btn.style.backgroundColor = ""));
-          getBuscarLivrosDaAPI();
-          filtro = ''
-        break breakme
+    if (this.value == filtro) {
+      buttonsFiltro.forEach((btn) => (btn.style.backgroundColor = ""));
+      filtro = "";
+      getBuscarLivrosDaAPI();
+      break breakme;
     }
-      filtro = this.value;
-       buttons.forEach((btn) => (btn.style.backgroundColor = ""));
-      this.style.backgroundColor = "#fc6621";
+    filtro = this.value;
+    buttonsFiltro.forEach((btn) => (btn.style.backgroundColor = ""));
+    this.style.backgroundColor = "#fc6621";
   }
-  let livrosFiltrados = livrosComDesconto.filter(
-    (livro) => livro.categoria == filtro
-  );
+  if (filtro) {
+    let livrosFiltrados = livrosComDesconto.filter(
+      (livro) => livro.categoria == filtro
+    );
     exibirOsLivrosNaTela(livrosFiltrados);
-    console.log(livrosNaTela)
-    return livrosFiltrados
+    console.table(livrosFiltrados);
+    return livrosFiltrados;
+  } else {
+    let livrosFiltrados = livrosComDesconto;
+    exibirOsLivrosNaTela(livrosFiltrados);
+    console.table(livrosFiltrados);
+    return livrosFiltrados;
+  }
 }

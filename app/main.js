@@ -1,7 +1,5 @@
 let livros = [];
 
-let livrosNaTela = document.getElementsByClassName('livro')
-console.log(livrosNaTela)
 const endpointAPI =
   "https://guilhermeonrails.github.io/casadocodigo/livros.json";
 getBuscarLivrosDaAPI();
