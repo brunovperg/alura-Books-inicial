@@ -3,6 +3,7 @@ const buttonsFiltro = document.querySelectorAll(
 );
 console.log(buttonsFiltro);
 let filtro;
+let livrosFiltrados
 buttonsFiltro.forEach((button) => {
   button.addEventListener("click", filtrarLivros);
 });
@@ -25,11 +26,12 @@ function filtrarLivros() {
     );
     exibirOsLivrosNaTela(livrosFiltrados);
     console.table(livrosFiltrados);
-    return livrosFiltrados;
+    
   } else {
     let livrosFiltrados = livrosComDesconto;
     exibirOsLivrosNaTela(livrosFiltrados);
     console.table(livrosFiltrados);
-    return livrosFiltrados;
+   
   }
+  return livrosFiltrados
 }

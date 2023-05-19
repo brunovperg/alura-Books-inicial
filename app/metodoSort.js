@@ -4,7 +4,7 @@ btnOrdenarPreco.addEventListener("click", ordenarLivrosPorPreco)
 
 function ordenarLivrosPorPreco() {
 
-     console.log()
+     console.log(livrosFiltrados)
     
 
 }
